@@ -1,0 +1,427 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+ /******************** COMIENZA ESTILOS INDEX y LOS COMPARTIDOS CON LAS DEMÁS PÁGINAS ***************/
+
+/*fuente para todas las paginas*/
+body{
+    font-family: 'Karla', sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+        "header-container header-container header-container"
+         "imagenMedio        imagenMedio      imagenMedio"
+         "footerP              footerP            footerP"
+    ;
+    row-gap: 10px;
+}
+
+.imagenMedio{
+    grid-area: imagenMedio;
+}
+
+.footerP{
+    grid-area: footerP;
+    display: flex; 
+    justify-content: space-around; 
+} 
+
+.header-container{
+    grid-area: header-container;
+    display: flex;
+    flex-wrap: wrap;
+    height: 780px;
+    background-image: url(../Imagenes/Overheadfinal321.jpg); 
+    background-repeat: no-repeat;
+    background-size: auto; /*para que no se deforme la imagen en el responsive*/
+    justify-content: space-between;
+    padding: 3.5rem;
+}
+
+
+/* Alineado horizontal de la barra de menú y eliminación de las viñetas*/ 
+.menu{
+    display: flex;
+    list-style-type: none; 
+}
+  
+    
+.menu__li{ 
+    margin-right: 2rem;
+
+}  
+
+ /*Para quitar el subrayado de los links de la lista y cambiar del color azul a negro*/ 
+.menu__li a{
+    text-decoration: none;
+    color: black;
+} 
+
+/* Genera efecto al pasar sobre los links de la barra de menú}*/
+.menu__li a:hover{
+     color:rgb(24, 137, 141) ;
+     font-size: 110%;
+     transition: 0.2s;
+    }
+
+.menuMobile {
+        display:none;
+    }    
+
+
+/*ubicación del nombre*/
+.titulo{
+    margin-left: 5rem;
+  
+}
+
+/*tamaño especial para la fuente del nombre y una pequeña animacion*/
+.marca{
+    font-weight: 300;
+    animation-name: animation;
+    animation:swing; /*animacion linkeada en head desde la pagina animate.css*/
+    animation-duration: 5s;
+    
+    }
+
+   
+ /*Estilo en común de las sub cajas del footer en todas las paginas*/
+.pie__sub{
+    background-color: rgba(226, 221, 215, 0.827);
+    border: 1px solid rgb(116, 113, 113);
+    border-radius: 1.5% ;
+    width: 18rem;
+    height: 20rem;
+    padding: 15px;
+
+}
+
+/*Estilo a la sub caja menu del footer  para quitar las viñetas y la posición*/
+.pie__menu{
+    list-style-type: none;
+    margin-left: 20px;
+    margin-top: 20px; 
+    
+}
+
+
+/******************** FINALIZA ESTILOS INDEX y LOS COMPARTIDOS CON LAS DEMÁS PÁGINAS ***************/
+
+/********************  COMIENZA ESTILOS PARTICULARES DE CADA PÁGINA MENOS INDEX ***************/
+
+/*******Products maquetación con grid ***/
+.containerProducts{
+    display:grid;
+    grid-template-areas:
+     "headerNoIndex  headerNoIndex   headerNoIndex"
+     "subHeader         subHeader         subHeader "
+     "galeriaImagenes  galeriaImagenes  galeriaImagenes"
+     "footerP            footerP           footerP";
+     row-gap: 10px
+}
+
+.subHeader{
+    grid-area: subHeader;
+    margin-left: 3rem;
+}
+
+.galeriaImagenes{
+    grid-area: galeriaImagenes;
+}
+
+.headerNoIndex{
+    grid-area: headerNoIndex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3.5rem
+}
+
+/* Alineado horizontal de la barra de menú y eliminación de las viñetas*/ 
+.menu2{
+    list-style-type: none; 
+    display: flex;
+    
+}
+
+.imagen{
+    padding:0px;
+    margin:0px;
+}
+.imagen img{
+    width: 320px;
+    height: 320px;
+    padding:0px;
+    margin: 0px;
+ 
+}
+.containerImagenes{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-auto-flow: dense;
+ 
+}
+
+/*******Taller, about-us y contact maquetación con grid ****/
+
+.containerPages{
+    display:grid;
+    grid-template-areas:
+       "headerNoIndex headerNoIndex"
+       "sectionPages sectionPages"
+       "footerP  footerP"
+     ;
+     row-gap: 10px;
+}
+
+.sectionPages{
+    grid-area: sectionPages;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding:10px;
+}
+
+
+/* Estilo de la tabla de Taller.html */
+.medio{
+    justify-content: left;
+    flex-wrap: wrap;
+    
+    
+}
+.imagenTaller{
+    width: 550px;
+    height: 400px;
+    padding: 10px;
+
+}
+
+.parrafo{
+    text-align:left;
+    margin: 10px;
+    flex-wrap: wrap;
+
+}
+.horarios{
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.table{
+    text-align: center;
+    width: 35%;
+    border: 2px solid rgb(122, 89, 122);
+
+}
+
+.tituloTable{
+    background-color: rgb(122, 89, 122);
+     
+}
+  
+
+/* Estilo al formulario de contact.html */
+#cajaformulario{
+    width: 500px;
+    margin-left: 3rem;
+    margin-top: 10px;
+    border-radius: 2%;
+    border-color: black;
+    background-color: rgb(164, 138, 164);
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+#cajaformulario legend{
+  font-size: larger;
+  background-color: rgb(122, 89, 122);
+  flex-wrap: wrap
+}
+
+button{
+    margin-top: 5px;
+    background-color: rgb(122, 89, 122);
+    border-color: black;
+    flex-wrap: wrap;
+}
+
+.imagenContact{
+  width: 400x;
+  height: 400px;
+  padding: 0px;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+
+
+}
+/*Transform imagen de AboutUs */
+.imagenAboutus{
+    padding: 0px;
+    margin: 0px;
+    width: 350px;
+    height: 350px;
+}
+.imagenAboutus:hover {
+    transform: scale(1.2);
+    transition: 0.4s;
+}
+
+/*Transform imagenes de Products */
+.imagen:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+
+/********************* Responsive*********************/
+/***** Empieza media querie mobile del index ****/
+
+@media only screen and (max-width: 320px) {
+    
+    .imagenMedio {
+        display:none;
+    }
+
+    .footerP{
+        display: none;
+    }
+   
+    .header-container {
+        justify-content: space-between;
+        background-position: center;
+        padding: 0px;
+        margin:0;
+    }
+
+    .titulo{
+      margin: 10px;
+           
+    }
+
+    #marca {
+        font-size: 20px;
+        background-color: rgba(175, 241, 237, 0.25);
+        border-radius: 6rem;
+        padding: 2px;
+    }
+
+    .menuMobile{
+     background: none;
+     width: 32px;
+     height: 32px;  
+     margin-top: 15px ;
+     display: block;
+     border-radius: 6px;
+   }
+
+    .menuMbutoon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu{
+        flex-direction: column;
+        font-size: small; 
+        background-color: rgba(190, 239, 233, 0.4); 
+        position: fixed;
+        top: 40px;
+        left: 0;
+        padding: 0px;
+        margin: 0px;
+        width: 45%;
+        height: calc(80%);
+        overflow-y: auto;
+       
+    }
+
+    .menu__li{
+        margin: 5px;
+    }
+        
+    /********* Empieza media querie mobile de products *********/
+    .headerNoIndex{
+        justify-content: space-between;
+        padding: 1px;
+        margin:1;
+    }
+
+    .menu2{
+       display:none
+    }
+   
+    .sectionPages{
+        flex-flow: column wrap;
+    }
+
+    /********* Empieza media querie mobile de talle, about-us y contact *********/
+    h2{
+        font-size: 20px;
+    }
+
+    .textoaboutUs{
+        font-size: 15px;
+    } 
+            
+    p{
+        text-align:left;
+        margin: 10px;
+        flex-wrap: wrap;
+        font-size: 10.5px;
+
+    }
+    
+    .imagenTaller{
+        width: 318px;
+        padding: 2px;
+    }
+
+    #imagenAboutus{
+        width: 315px;
+
+    }
+    .textoaboutUs{
+        font-size: 10.5px;
+    }
+
+    .imagenContact{
+        width:315px;
+    }
+
+    /**formulario de contacto para mobile*/
+        #cajaformulario{
+        width: 250px;
+        margin-left:2px;
+        margin-top: 10px;
+        border-radius: 2%;
+        border-color: black;
+        background-color: rgb(164, 138, 164);
+        font-size: 15px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+    
+    #cajaformulario legend{
+      font-size: small;
+      background-color: rgb(122, 89, 122);
+      flex-wrap: wrap
+    }
+    
+    .form{
+        width: 250px;
+        
+    }
+
+  textarea{
+      width: 230px;
+  }
+
+
+}
